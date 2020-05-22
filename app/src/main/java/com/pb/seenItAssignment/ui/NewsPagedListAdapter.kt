@@ -87,6 +87,7 @@ class NewsPagedListAdapter(val context: Context): PagedListAdapter<Article, Recy
 
             Glide.with(itemView.context)
                 .load(article?.urlToImage)
+                .placeholder(R.drawable.placeholder)
                 .into(itemView.iv_poster)
 
 
