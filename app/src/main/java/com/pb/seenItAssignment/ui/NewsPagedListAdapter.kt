@@ -87,7 +87,6 @@ class NewsPagedListAdapter(val context: Context): PagedListAdapter<Article, Recy
 
             Glide.with(itemView.context)
                 .load(article?.urlToImage)
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(itemView.iv_poster)
 
 
@@ -123,9 +122,9 @@ class NewsPagedListAdapter(val context: Context): PagedListAdapter<Article, Recy
 
         if (hadExtraRow != hasExtraRow) {
             if (hadExtraRow) {                             //hadExtraRow is true and hasExtraRow false
-                notifyItemRemoved(super.getItemCount())    //remove the progressbar at the end
+                notifyItemRemoved(super.getItemCount())    //remove the view at the end
             } else {                                       //hasExtraRow is true and hadExtraRow false
-                notifyItemInserted(super.getItemCount())   //add the progressbar at the end
+                notifyItemInserted(super.getItemCount())   //add the view at the end
             }
         } else if (hasExtraRow && previousState != newNetworkState) { //hasExtraRow is true and hadExtraRow true and (NetworkState.ERROR or NetworkState.ENDOFLIST)
             notifyItemChanged(itemCount - 1)       //add the network message at the end

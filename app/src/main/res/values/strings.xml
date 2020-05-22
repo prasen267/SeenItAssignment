@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">seenItAssignment</string>
+    <string name="app_name">News Buzz</string>
     <string name="placeholder_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit turpis ac mi congue ultrices. Vestibulum facilisis iaculis ante non pharetra. Pellentesque pulvinar nisl quis eros consequat efficitur. Cras vel metus ut diam molestie fringilla. Quisque dui erat, scelerisque at ante in, fringilla pulvinar massa. Etiam pretium ornare dictum. Proin porta eros odio, eu semper sem luctus vitae. Maecenas finibus risus id turpis rutrum, sed eleifend urna fringilla. In auctor augue eget elit euismod ultricies sit amet at arcu.</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

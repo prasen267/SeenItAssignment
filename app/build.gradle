@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdkVersion 29
@@ -75,12 +75,11 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
     //navigation
-    def nav_version = "2.3.0-alpha03"
+    def nav_version = "2.3.0-beta01"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    //databinding
-    kapt "com.android.databinding:compiler:3.6.1"
+
 
     //kodein
     implementation 'org.kodein.di:kodein-di-generic-jvm:6.2.1'
@@ -89,6 +88,4 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 }
-kapt {
-    generateStubs = true
-}
+

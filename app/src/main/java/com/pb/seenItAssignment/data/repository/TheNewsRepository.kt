@@ -12,15 +12,7 @@ import com.pb.seenItAssignment.data.model.NewsResponse
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 class TheNewsRepository(private val theNewService: TheNewService ) {
-    private val _networkState = MutableLiveData<NetworkState>()
-    val networkState: LiveData<NetworkState>
-        get() = _networkState
-
-    private val _downloadedMovieResponse=MutableLiveData<NewsResponse>()
-    val downloadedMovieResponse:LiveData<NewsResponse>
-        get() = _downloadedMovieResponse
-
-    lateinit var newsPagedList:LiveData<PagedList<Article>>
+   lateinit var newsPagedList:LiveData<PagedList<Article>>
     lateinit var newsDataSourceFactory: NewsDataSourceFactory
     fun fetchLiveNewsPagedList(compositeDisposable: CompositeDisposable):LiveData<PagedList<Article>>{
 
@@ -33,7 +25,7 @@ class TheNewsRepository(private val theNewService: TheNewService ) {
         return newsPagedList
     }
     fun getNetworkState1(): LiveData<NetworkState> {
-        return Transformations.switchMap<NewsDataSource, NetworkState>(
+        return Transformations.switchMap(
             newsDataSourceFactory.newsLiveDataSource, NewsDataSource::networkState)
     }
     fun refresh(){

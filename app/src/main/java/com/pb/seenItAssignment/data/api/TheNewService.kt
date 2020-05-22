@@ -18,7 +18,7 @@ interface TheNewService {
     fun getTopHeadLines(@Query("page") page: Int): Single<NewsResponse>
 
     companion object {
-        operator fun invoke(networkConnectionInterceptor: NetworkConnectionInterceptor): TheNewService {
+        operator fun invoke(): TheNewService {
 
             val requestInterceptor = Interceptor { chain ->
                 val url = chain.request()
