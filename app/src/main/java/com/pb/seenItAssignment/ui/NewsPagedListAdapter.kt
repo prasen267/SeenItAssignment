@@ -1,7 +1,6 @@
 package com.pb.seenItAssignment.ui
 
 import android.content.Context
-import android.content.Intent
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
@@ -38,7 +37,7 @@ class NewsPagedListAdapter(val context: Context): PagedListAdapter<Article, Recy
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (getItemViewType(position) == MOVIE_VIEW_TYPE) {
-            (holder as NewsItemViewHolder).bind(getItem(position), context)
+            (holder as NewsItemViewHolder).bind(getItem(position))
         } else {
             (holder as NetworkStateItemHolder).bind(networkState)
         }
@@ -76,7 +75,7 @@ class NewsPagedListAdapter(val context: Context): PagedListAdapter<Article, Recy
 
 
     class NewsItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bind(article: Article?, context: Context) {
+        fun bind(article: Article?) {
             itemView.cv_news_title.text = article?.title
             itemView.cv_news_description.text = article?.description
             itemView.link.apply {
@@ -91,7 +90,7 @@ class NewsPagedListAdapter(val context: Context): PagedListAdapter<Article, Recy
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(itemView.iv_poster)
 
-           
+
         }
     }
     class NetworkStateItemHolder(view: View) : RecyclerView.ViewHolder(view) {
